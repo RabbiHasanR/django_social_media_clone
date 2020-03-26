@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse_lazy
-
+from django.contrib import messages
 from django.http import Http404
 from django.views import generic
 from braces.views import SelectRelatedMixin
@@ -18,7 +18,7 @@ class PostList(SelectRelatedMixin,generic.ListView):
 
 class UserPosts(generic.ListView):
     model=models.Post
-    template_name='posts/user_post_list.html'
+    template_name='post/user_post_list.html'
 
     def get_queryset(self):
         try:
@@ -41,7 +41,7 @@ class PostDetail(SelectRelatedMixin,generic.DetailView):
         return queryset.filter(user__username__iexact=self.kwargs.get('username'))
 
 class CreatePost(LoginRequiredMixin,SelectRelatedMixin,generic.CreateView):
-    fields=('message','groups')
+    fields=('message','group')
     model=models.Post
 
     def form_valid(self,form):

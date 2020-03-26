@@ -1,9 +1,9 @@
-{% extends 'posts/post_base.html' %}
+{% extends 'post/post_base.html' %}
 
 {% block post_content %}
 <h3>Are you sure you want to delete the post?</h3>
 <div class="posts">
-  {% include 'posts/_psot.html' with post=object hide_delete=True %}
+  {% include 'post/_post.html' with post=object hide_delete=True %}
 </div>
 
 <form method="post">
