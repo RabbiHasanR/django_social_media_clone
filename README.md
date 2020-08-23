@@ -15,6 +15,18 @@ It is a simple social site project which made by using Django.This is a nice exa
 * Class based views
 * Some js animation using canvas
 
+
+## Getting started
+
+Steps:
+
+1. Clone/pull/download this repository
+2. Create a virtualenv with `virtualenv env` and install dependencies with `pip install -r requirements.txt`
+3. Configure your .env variables
+4. Rename your project with `python manage.py rename <yourprojectname> <newprojectname>`
+6. Create superuser with `python manage.py create superuser`
+5. Run project on local server with `python manage.py runserver`
+
 # Project Images
 
 ## Home View
